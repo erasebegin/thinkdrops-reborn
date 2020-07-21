@@ -35,12 +35,14 @@ export default class navigation extends Component {
           >
             <a
               href="https://www.github.com/erasebegin"
+              target="_blank"
               className={styles.contactLink}
             >
               <FaGithubAlt />
             </a>
             <a
               href="https://www.linkedin.com/in/chris-haupt/"
+              target="_blank"
               className={styles.contactLink}
             >
               <AiFillLinkedin />
