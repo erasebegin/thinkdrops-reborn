@@ -1,7 +1,7 @@
 .navigation {
   display: flex;
   justify-content: center;
-  list-style: none;
+  align-items: center;
   padding: 0;
   margin: 0;
   height: 20vh;
@@ -9,12 +9,120 @@
   font-size: 1.25em;
 }
 
-.navigationItem {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 1em;
+.homeButton {
+  text-decoration: none;
+  background: lightgrey;
+  padding: .5em;
+  border-radius: 10px;
 }
 
-.navigationItem a {
-  color: currentColor;
+.contactButton, .contactContainer, .homeButton {
+  font-size: 1.8rem;
+}
+
+/* CONTACT COMPONENT */
+
+.contactButton {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding: .5em;
+  margin: 0 .75em;
+  border-radius: 10px;
+  background: lightgrey;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactWord {
+  margin-left: .5em;
+}
+
+.contactTray {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  transform: translate(49%, -100%);
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: .45em .5em .45em 1em;
+  transition: ease-out 200ms;
+}
+
+.contactTrayOpen {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  transform: translate(95%, -100%);
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: .45em .5em .45em 1em;
+  transition: ease-out 200ms;
+  background: #ebebeb;
+}
+
+.contactTrayOpen > * {
+  margin: 0 .3em;
+}
+
+.contactLink {
+  color: rgb(83, 83, 83); 
+}
+
+.contactLink:hover {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: jump;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes jump {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-10px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
+.contactLink:visited {
+  color: rgb(83, 83, 83);
+}
+
+.contactButton:hover , .homeButton:hover {
+  color: rgb(255, 255, 239);
+  background: darkgray;
+  box-shadow: 2px 1px 1px lightgray;
+}
+
+@media(max-width: 700px) {
+  .contactWord {
+    display: none;
+    padding: .25em;
+  }
+
+  .homeButton {
+    padding: .25em;
+  }
+
+  .contactTray {
+    font-size: .5rem;
+    padding: 2.2em 1em;
+    transform: translate(58%, -110%);
+  }
+
+  .contactTrayOpen {
+    padding: 0 .5em 0 2em;
+    transform: translate(15%, -100%);
+    border-radius: 0;
+    border-right: none;
+  }
+
+  .contactTrayOpen > * {
+    margin: 0.1em;
+  }  
+  
 }

@@ -8,6 +8,7 @@
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "gatsby": "^1.9.277",
     "gatsby-image": "^1.0.55",
     "gatsby-link": "^1.6.46",
@@ -15,7 +16,9 @@
     "gatsby-plugin-sharp": "^1.6.46",
     "gatsby-source-contentful": "^1.3.54",
     "gatsby-transformer-remark": "^1.7.44",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "react-icons": "^3.10.0",
+    "styled-components": "^5.1.1"
   },
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
   "keywords": [
