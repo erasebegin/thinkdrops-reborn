@@ -1,23 +1,37 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
-import Img from 'gatsby-image'
-
-import heroStyles from '../components/hero.module.css'
+import React from "react";
+import Helmet from "react-helmet";
+import get from "lodash/get";
+import favicon16 from "../favicon/favicon-16x16.png";
+import favicon32 from "../favicon/favicon-32x32.png";
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const post = get(this.props, "data.contentfulBlogPost");
 
     return (
-      <div style={{ background: '#fff' }}>
-        <Helmet title={`${post.title} | ${siteTitle}`} />
+      <div style={{ background: "#fff" }}>
+        <Helmet
+          title={`${post.title} | Thinkdrops`}
+          link={[
+            {
+              rel: "icon",
+              type: "image/png",
+              sizes: "16x16",
+              href: `${favicon16}`,
+            },
+            {
+              rel: "icon",
+              type: "image/png",
+              sizes: "32x32",
+              href: `${favicon32}`,
+            },
+          ]}
+        />
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
           <p
             style={{
-              display: 'block',
+              display: "block",
             }}
           >
             {post.publishDate}
@@ -29,11 +43,11 @@ class BlogPostTemplate extends React.Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -47,4 +61,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
